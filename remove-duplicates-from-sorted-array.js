@@ -5,7 +5,6 @@ var removeDuplicates = function(nums) {
     if (nums.length === 0) return 0
 
    let j = 0;
-   console.log(++j)
    for (let i = 1; i < nums.length; i++) {
     if (nums[j] !== nums[i])   {
         /*the pre-increment operator (++j) increases the value before it is used, 
