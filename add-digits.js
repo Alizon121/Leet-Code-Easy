@@ -8,7 +8,7 @@ var addDigits = function(num) {
     
     else {
         num = String(num).split("")
-        num = num.reduce((a,c) => a + Number(c), 0)
+        num = num.reduce((a,c) => a + Number(c), 0) // We need to specify the initial value otherwise infinte loop
         return addDigits(num)
     }
 };
