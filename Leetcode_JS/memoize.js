@@ -3,16 +3,14 @@
  * @return {Function}
  */
 function memoize(fn) {
-    let obj = {}
-    let result = null
-    return function(...args) {
-       const keys = JSON.stringify(args) // convert to a string to use as keys
-       if (obj[keys]) { // Check if keys exist in the object
-        return obj[keys]
-       }
-      const result = fn.apply(this, args) // use the apply method to call the original func. Use 'this' argument for correct context
-      obj[keys]= result // Save the result in the cache
-
-      return result
+  const cache = {}; //object to store the cahced key-values
+  return function(...args) {
+    const key = String(args); // stringify the args to store in obj
+    if (key in cache) {
+      return cache[key]; // return the value that is stored in cache
     }
+    const result = fn(...args); // pass args into toriginal function
+    cache[key] = result; // set new key-value
+    return result;
+  }
 }
