@@ -11,6 +11,5 @@ class Solution(object):
         while spointer < len(s) and tpointer < len(t):
             if s[spointer] is t[tpointer]:
                 spointer += 1
-            else:
-                tpointer +=1
+            tpointer +=1
         return spointer == len(s)
