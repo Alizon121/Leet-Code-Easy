@@ -21,7 +21,7 @@ class Solution(object):
             else:
                 chars[idx] = ch
                 idx+=1
-                for num in str(count):
+                for num in str(count): # Set the string with new values
                     chars[idx] = num
                     idx+=1
         chars[:] = chars[:idx]
