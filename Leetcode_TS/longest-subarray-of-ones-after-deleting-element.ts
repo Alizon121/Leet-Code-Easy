@@ -1,4 +1,4 @@
-function longestSubarray(nums: number[]): number {
+function longestSubarrayy(nums: number[]): number {
     let left:number = 0
     let zeroCounter: number = 0
     let max:number = 0
