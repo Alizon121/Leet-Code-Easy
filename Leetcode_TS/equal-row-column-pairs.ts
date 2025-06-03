@@ -1,4 +1,4 @@
-function equalPairs(grid: number[][]): number {
+function equalPairss(grid: number[][]): number {
     
     let count:number = 0
     let rows = new Map<string , number>()
