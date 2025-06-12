@@ -10,8 +10,8 @@ function predictPartyVictoryy(senate: string): string {
     }
 
     while (radiant.length && dire.length) {
-        let r = radiant.shift()
-        let d = dire.shift()
+        let r = radiant.shift() as number
+        let d = dire.shift() as number
 
         if (r < d) radiant.push(r+senate.length)
         else dire.push(d+senate.length)
