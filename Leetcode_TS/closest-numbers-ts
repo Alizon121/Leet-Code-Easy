@@ -1,0 +1,17 @@
+function closestNumbers(arr: number[]): number[] {
+    let sortedArray: number[] = arr.sort((a,b) => a-b)
+    let result: number[] =[]
+    let minDiff:number = Infinity
+    
+    for (let i = 0; i < sortedArray.length-1; i++) {
+        let diff: number = Math.abs(arr[i+1] - arr[i])
+        if (minDiff > diff) {
+            minDiff = diff
+            result = [arr[i], arr[i+1]]
+        } else if (minDiff === diff) {
+           result = [...result, arr[i], arr[i+1]]
+        }
+        
+    }
+    return result
+}
