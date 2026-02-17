@@ -1,0 +1,23 @@
+function luckBalance(k: number, contests: number[][]): number {
+    // Write your code here
+    
+    let luckCounter: number = 0
+    const sortedContests: number[][] = contests.sort((a,b) => a[0]-b[0])
+    
+    for (let i = sortedContests.length-1; i >= 0; i--) {
+       let [l, t] = sortedContests[i]
+        
+        if (t === 1 && k > 0) {
+            luckCounter+=l
+            k--
+        }
+        else if (t === 1 && k === 0) {
+            luckCounter-=l
+        }
+        
+       else if (t === 0) {
+        luckCounter+=l
+       }
+    }
+    return luckCounter
+}
